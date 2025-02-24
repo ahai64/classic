@@ -1,21 +1,18 @@
 # Classic
 
-A tiny class module for Lua. Attempts to stay simple and provide decent
-performance by avoiding unnecessary over-abstraction.
+A tiny class module for Picotron and PICO-8. Attempts to stay simple and provide decent performance by avoiding unnecessary over-abstraction.
 
+Forked from rxi/classic https://github.com/rxi/classic
 
 ## Usage
 
-The [module](classic.lua) should be dropped in to an existing project and
-required by it:
+The [module](classic.lua) should be dropped in to an existing project and required by it:
 
 ```lua
-Object = require "classic"
+Object = include("classic.lua")
 ```
 
-The module returns the object base class which can be extended to create any
-additional classes.
-
+The module returns the object base class which can be extended to create any additional classes.
 
 ### Creating a new class
 ```lua
@@ -57,7 +54,7 @@ PairPrinter = Object:extend()
 
 function PairPrinter:printPairs()
   for k, v in pairs(self) do
-    print(k, v)
+    print(k .. ' ' .. v)
   end
 end
 
